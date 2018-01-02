@@ -27,6 +27,6 @@ def bazaar_export_orders():
 def bazaar_import_orders():
     pass
 
-app.run(debug=True)
+app.run()
 
 #comment
