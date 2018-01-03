@@ -1,4 +1,5 @@
 from flask import Flask, request
+from deliver import xmlSample
 
 app = Flask(__name__)
 
@@ -17,9 +18,10 @@ def bazaar_export_orders():
         page = request.args['page']
 
         if username == 'mango' and password == "papaya":
-            return "Hi Mango", 200
+            return xmlSample, 200
         else:
-            return "You are no Mango!", 401
+            header("Content-type: text/xml")
+            return "You are no authorize!", 401
     else:
         return "Me no understand", 400
 
