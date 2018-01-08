@@ -1,7 +1,19 @@
 from flask import Flask, request
 from deliver import xmlSample
+import logging
+
+logging.basicConfig(filename="logfile.log", level=logging.DEBUG, format="%(levelname)s:%(asctime)s: %(message)s")
 
 app = Flask(__name__)
+
+# @app.before_request
+# def before_request():
+#     if True:
+#         print("HEADERS", request.headers)
+#         print("REQ_path", request.path)
+#         print("ARGS",request.args)
+#         print("DATA",request.data)
+#         print("FORM",request.form)
 
 @app.route("/")
 def home():
@@ -25,11 +37,14 @@ def bazaar_export_orders():
     else:
         return "Me no understand", 400
 
+
 @app.route("/bazaar", methods=["POST"])
 def bazaar_import_orders():
-    pass
+    logging.info("Connecting from: " + request.remote_addr)
+    logging.info(str(request.data))
+    return "Hello!"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5000)
 
 #comment
