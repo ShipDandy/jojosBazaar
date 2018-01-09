@@ -1,7 +1,1 @@
-INFO:2018-01-09 13:45:49,946:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-INFO:2018-01-09 13:45:54,020: Import request from: 127.0.0.1
-INFO:2018-01-09 13:45:54,023: Arguments included: http://127.0.0.1:5000/bazaar?SS-UserName=mango&SS-Password=papaya&action=export&start_date=01%2f02%2f2018+16%3a50&end_date=01%2f02%2f2018+16%3a55&page=1
-INFO:2018-01-09 13:45:54,024: 127.0.0.1 - - [09/Jan/2018 13:45:54] "GET /bazaar?SS-UserName=mango&SS-Password=papaya&action=export&start_date=01%2f02%2f2018+16%3a50&end_date=01%2f02%2f2018+16%3a55&page=1 HTTP/1.1" 200 -
-INFO:2018-01-09 13:47:16,312: Connecting from: 127.0.0.1
-INFO:2018-01-09 13:47:16,312: b'<xml><message>This is not a love song</message></xml>'
-INFO:2018-01-09 13:47:16,313: 127.0.0.1 - - [09/Jan/2018 13:47:16] "POST /bazaar HTTP/1.1" 200 -
+
