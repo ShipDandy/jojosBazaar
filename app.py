@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, send_file
 from deliver import xmlSample
 import logging
 
@@ -43,6 +43,14 @@ def bazaar_import_orders():
     logging.info("Connecting from: " + request.remote_addr)
     logging.info(str(request.data))
     return "Hello!"
+
+@app.route("/postlogs")
+def view_post_logs():
+    open_log = open("logfile.log", "r")
+    log_info = str(open_log.read())
+    open_log.close()
+    # return {"logs": log_info}
+    return send_file("logfile.log")
 
 if __name__ == '__main__':
     app.run(port=5000)
