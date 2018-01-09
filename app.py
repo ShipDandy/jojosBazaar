@@ -50,6 +50,6 @@ def view_post_logs():
     return send_file("logfile.log")
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run()
 
 #comment
