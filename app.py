@@ -31,7 +31,6 @@ def bazaar_export_orders():
         page = request.args['page']
 
         if username == 'mango' and password == "papaya":
-            header("Content-type: text/xml")
             return xmlSample, 200
         else:
             return "You are no authorize!", 401
