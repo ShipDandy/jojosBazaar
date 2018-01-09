@@ -22,7 +22,7 @@ def home():
 @app.route("/bazaar", methods=["GET"])
 def bazaar_export_orders():
     logging.info("Import request from: " + request.remote_addr)
-    logging.info("Arguments included: " + request.args)
+    logging.info("Arguments included: " + request.url)
     if request.args['action'] == "export":
         username = request.args['SS-UserName']
         password = request.args['SS-Password']
