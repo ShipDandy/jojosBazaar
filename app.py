@@ -21,6 +21,7 @@ def home():
 
 @app.route("/bazaar", methods=["GET"])
 def bazaar_export_orders():
+    logging.info("Import request from: " + request.remote_addr)
     if request.args['action'] == "export":
         username = request.args['SS-UserName']
         password = request.args['SS-Password']
@@ -30,9 +31,9 @@ def bazaar_export_orders():
         page = request.args['page']
 
         if username == 'mango' and password == "papaya":
+            header("Content-type: text/xml")
             return xmlSample, 200
         else:
-            header("Content-type: text/xml")
             return "You are no authorize!", 401
     else:
         return "Me no understand", 400
@@ -46,10 +47,6 @@ def bazaar_import_orders():
 
 @app.route("/postlogs")
 def view_post_logs():
-    open_log = open("logfile.log", "r")
-    log_info = str(open_log.read())
-    open_log.close()
-    # return {"logs": log_info}
     return send_file("logfile.log")
 
 if __name__ == '__main__':
