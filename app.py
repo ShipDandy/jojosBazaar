@@ -42,6 +42,7 @@ def bazaar_export_orders():
 @app.route("/bazaar", methods=["POST"])
 def bazaar_import_orders():
     logging.info("Connecting from: " + request.remote_addr)
+    logging.info("Arguments included: " + str(request.url))
     logging.info(str(request.data))
     return "Hello!"
 
