@@ -2,9 +2,11 @@ from flask import Flask, request, send_file, jsonify
 from fakeDB import xmlSample
 import logging
 
-logging.basicConfig(filename="logfile.log", level=logging.DEBUG, format="%(levelname)s:%(asctime)s: %(message)s")
+
 
 app = Flask(__name__)
+
+logging.basicConfig(filename="logfile.log", level=logging.DEBUG, format="%(levelname)s:%(asctime)s: %(message)s")
 
 # @app.before_request
 # def before_request():
