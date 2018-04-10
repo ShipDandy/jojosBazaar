@@ -2,7 +2,7 @@ from flask import Flask, request, send_file, jsonify
 from fakeDB import xmlSample
 import logging
 
-logging.basicConfig(filename="logfile.log", level=logging.INFO, format="%(levelname)s:%(asctime)s: %(message)s")
+logging.basicConfig(filename="logfile.log", level=logging.DEBUG, format="%(levelname)s:%(asctime)s: %(message)s")
 
 app = Flask(__name__)
 
@@ -51,7 +51,7 @@ def bazaar_import_orders():
 
 @app.route("/postlogs")
 def view_post_logs():
-    return send_file("logfile.log")
+    return logfile.log
 
 if __name__ == '__main__':
     app.run()
