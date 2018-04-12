@@ -10,3 +10,8 @@ WARNING:2018-04-12 13:33:21,753:  * Debugger is active!
 INFO:2018-04-12 13:33:21,768:  * Debugger PIN: 237-097-025
 INFO:2018-04-12 13:33:30,860:  * Detected change in '/Users/zyoosun/Documents/WorkProjects/customStore/app.py', reloading
 INFO:2018-04-12 13:33:30,892:  * Restarting with stat
+INFO:2018-04-12 13:50:49,952:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:2018-04-12 13:50:49,953:  * Restarting with stat
+WARNING:2018-04-12 13:50:50,245:  * Debugger is active!
+INFO:2018-04-12 13:50:50,259:  * Debugger PIN: 237-097-025
+INFO:2018-04-12 13:50:55,963: 127.0.0.1 - - [12/Apr/2018 13:50:55] "GET /postlogs HTTP/1.1" 200 -
