@@ -76,9 +76,9 @@ def view_logs():
 
     return html_response
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()
 
 """Runs app as a local Flask server for testing"""
-app.run(port=5000, debug=True)
+# app.run(port=5000, debug=True)
 
