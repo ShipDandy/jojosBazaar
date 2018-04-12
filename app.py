@@ -72,7 +72,7 @@ def view_post_logs():
 
     # return html_response
     
-    return send_file("/public/logfile.log", as_attachment=True, attachment_filename="logfile.log")
+    return send_file("logfile.log", as_attachment=True, attachment_filename="logfile.log")
 
 
 if __name__ == '__main__':
