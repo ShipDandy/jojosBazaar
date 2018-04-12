@@ -71,7 +71,7 @@ def view_post_logs():
     #         html_response += "<p>{}</p>".format(line)
 
     # return html_response
-    return send_file("requirements.txt")
+    return send_file("logfile.log", as_attachment=True)
 
 
 if __name__ == '__main__':
