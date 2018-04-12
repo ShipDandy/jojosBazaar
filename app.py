@@ -64,13 +64,14 @@ def bazaar_ship_notify():
 """Endpoint on site from which log files can be downloaded"""
 @app.route("/postlogs", methods=["GET"])
 def view_post_logs():
-    html_response = ""
+    # html_response = ""
 
-    with open("logfile.log") as readlogs:
-        for line in readlogs:
-            html_response += "<p>{}</p>".format(line)
+    # with open("logfile.log") as readlogs:
+    #     for line in readlogs:
+    #         html_response += "<p>{}</p>".format(line)
 
-    return html_response
+    # return html_response
+    return send_file("requirements.txt")
 
 
 if __name__ == '__main__':
