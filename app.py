@@ -62,22 +62,23 @@ def bazaar_ship_notify():
     return jsonify({"message": "Shipment notification received."}), 200
 
 """Endpoint on site from which log files can be downloaded"""
-@app.route("/postlogs", methods=["GET"])
-def view_post_logs():
-    # html_response = ""
-
-    # with open("logfile.log") as readlogs:
-    #     for line in readlogs:
-    #         html_response += "<p>{}</p>".format(line)
-
-    # return html_response
-    
+@app.route("/getlogs", methods=["GET"])
+def download_logs():    
     return send_file("logfile.log", as_attachment=True, attachment_filename="logfile.log")
 
+@app.route("/logs", methods=["GET"])
+def view_logs():
+    html_response = ""
 
-if __name__ == '__main__':
-    app.run()
+    with open("logfile.log") as readlogs:
+        for line in readlogs:
+            html_response += "<p>{}</p>".format(line)
+
+    return html_response
+
+# if __name__ == '__main__':
+#     app.run()
 
 """Runs app as a local Flask server for testing"""
-# app.run(port=5000, debug=True)
+app.run(port=5000, debug=True)
 
