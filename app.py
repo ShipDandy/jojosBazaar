@@ -62,7 +62,7 @@ def bazaar_ship_notify():
     return jsonify({"message": "Shipment notification received."}), 200
 
 """Endpoint on site from which log files can be downloaded"""
-@app.route("/postlogs")
+@app.route("/postlogs", methods=["GET"])
 def view_post_logs():
     html_response = ""
 
