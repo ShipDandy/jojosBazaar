@@ -1,17 +1,1 @@
 This is your log file!
-
-INFO:2018-04-12 16:43:30,806:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-INFO:2018-04-12 16:43:30,807:  * Restarting with stat
-WARNING:2018-04-12 16:43:31,077:  * Debugger is active!
-INFO:2018-04-12 16:43:31,098:  * Debugger PIN: 237-097-025
-INFO:2018-04-12 16:43:39,674: 127.0.0.1 - - [12/Apr/2018 16:43:39] "GET /postlogs HTTP/1.1" 404 -
-INFO:2018-04-12 16:43:50,051: 127.0.0.1 - - [12/Apr/2018 16:43:50] "GET /getlogs HTTP/1.1" 200 -
-INFO:2018-04-12 16:45:39,331:  * Detected change in '/Users/zyoosun/Documents/WorkProjects/customStore/app.py', reloading
-INFO:2018-04-12 16:45:39,362:  * Restarting with stat
-WARNING:2018-04-12 16:45:39,661:  * Debugger is active!
-INFO:2018-04-12 16:45:39,675:  * Debugger PIN: 237-097-025
-INFO:2018-04-12 16:45:46,719:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-INFO:2018-04-12 16:45:46,720:  * Restarting with stat
-WARNING:2018-04-12 16:45:46,989:  * Debugger is active!
-INFO:2018-04-12 16:45:47,003:  * Debugger PIN: 237-097-025
-INFO:2018-04-12 16:45:53,412: 127.0.0.1 - - [12/Apr/2018 16:45:53] "GET /logs HTTP/1.1" 200 -
