@@ -18,7 +18,7 @@ When an order has been shipped or fulfilled a shipment notification will be sent
 * Service used
 * Tracking number associated
 
-There may be cases where an order is shipped using methods not associated with a ShipStation carrier account. This is marking an order as shipped in ShipStation will create a fulfillment. Shipment notification about this order will still be sent and information passed will depend upon what was included during the marking process.
+There may be cases where an order is shipped using methods not associated with a ShipStation carrier account. This is marking an order as shipped in ShipStation and will create a fulfillment. Shipment notification about this order will still be sent and information passed will depend upon what was included during the marking process.
 
 ###### Sidenote
 
