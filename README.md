@@ -1,10 +1,10 @@
 ## ShipStation Custom Store Example
 
-The purpose of this app is to illustrate the basic concepts of the creating a custom store integration with ShipStation.
+The purpose of this app is to illustrate the basic concepts of creating a custom store integration with ShipStation.
 
 ###### What is a Custom Store?
 
-Custom stores allow for the creation of a connection to ShipStation that helps automate the passing of order information. On the user's end an API endpoint is set up to act as an intermediary between their marketplace and ShipStation. The endpoint methods that a custom store user are responsible for creating should be able to respond to API requests from ShipStation with the presentation of order information or the ingestion of shipping information. Order information will be delivered and received using an XML format.
+Custom stores allow for the building of a connection to ShipStation that helps automate the passing of order information. On the user's end an API endpoint is set up to act as an intermediary between their marketplace and ShipStation. The endpoint methods that a custom store user are responsible for creating should be able to respond to API requests from ShipStation with the presentation of order information or the ingestion of shipping information. Order information will be delivered and received using an XML format.
 
 ###### GET Requests
 
@@ -14,9 +14,9 @@ When the custom store endpoint is contacted with a GET request it should be able
 
 When an order has been shipped or fulfilled a shipment notification will be sent from ShipStation containing relevant shipment information such as:
 
-• Carrier used
-• Service used
-• Tracking number associated
+* Carrier used
+* Service used
+* Tracking number associated
 
 There may be cases where an order is shipped using methods not associated with a ShipStation carrier account. This is marking an order as shipped in ShipStation will create a fulfillment. Shipment notification about this order will still be sent and information passed will depend upon what was included during the marking process.
 
