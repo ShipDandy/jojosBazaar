@@ -2,6 +2,9 @@ from flask import Flask, request, send_file, jsonify
 from fakeDB import sampleOrder, sampleOrderUpdate # in place of a database we will use this python file with a pre-composed order.
 import logging
 
+import settings
+import services as se
+
 """When developing custom endpoints having logging capture incoming information from ShipStation in invaluable."""
 logging.basicConfig(filename="logfile.log", level=logging.INFO, format="%(levelname)s:%(asctime)s: %(message)s")
 
@@ -29,12 +32,15 @@ def bazaar_export_orders():
     except Exception:
         return jsonify({"message": "Expected Parameters not received."}), 400 # useful check that all parameters are being sent when mocking your own calls for testing purposes.
 
-    # simple authorization method, production authorization will probably be much fancier.
-    if username != 'mango' or password != 'papaya':
+    # After successful authorization you would normally take the startDate and endDate and query your database for new/updated orders to pass back as XML. If you needed to send you orders over multiple pages you would also take advantage of the page value passed along. For this example we simply contact our fakeDB.py file for our response.
+
+    if se.authorizeCreds(username, password):
+        return sampleOrder, 200
+    else:
         return jsonify({"message": "Authorization failed."}), 401
 
-    # After successful authorization you would normally take the startDate and endDate and query your database for new/updated orders to pass back as XML. If you needed to send you orders over multiple pages you would also take advantage of the page value passed along. For this example we simply contact our fakeDB.py file for our response.
-    return sampleOrder, 200
+    
+    
         
 
 """An idempotent endpoint set up to receive updated order information from ShipStation. POST requests pass along shipping information for orders including carrier used as well as tracking numbers."""
@@ -54,7 +60,9 @@ def bazaar_ship_notify():
     except Exception:
         return jsonify({"message": "Expected Parameters not received."}), 400
 
-    if username != 'mango' or password != 'papaya':
+    if se.authorizeCreds(username, password):
+        pass
+    else:
         return jsonify({"message": "Authorization failed."}), 401
 
     # The carrier service selected when a label is generated in ShipStation will be passed along, if an order was marked as shipped either in app or via API a value will not be passed in the string parameter.
@@ -85,8 +93,8 @@ def view_logs():
     return html_response
 
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
 
 """Runs app on a local Flask server for testing"""
-# app.run(port=5000, debug=True)
+app.run(port=5000, debug=True)

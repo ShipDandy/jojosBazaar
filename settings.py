@@ -1,0 +1,5 @@
+
+
+storeUsername = "mango"
+
+storePassword = "papaya"
